@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.rizqanmr.newsapp.network.model.ArticlesItem" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/dp8"
+        app:cardElevation="@dimen/dp4"
+        app:cardMaxElevation="@dimen/dp4"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivNews"
+                android:layout_width="@dimen/dp80"
+                android:layout_height="@dimen/dp80"
+                android:contentDescription="@string/news_image"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvNewsTitle"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp8"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="@{item.title}"
+                android:textSize="@dimen/sp14"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivNews"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="News Title News Title News Title News Title News Title" />
+
+            <TextView
+                android:id="@+id/tvSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{item.source.name}"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintTop_toBottomOf="@id/tvNewsTitle"
+                app:layout_constraintStart_toStartOf="@id/tvNewsTitle"
+                tools:text="Source" />
+
+            <TextView
+                android:id="@+id/tvBullet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp6"
+                android:text="@string/text_with_bullet"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintBottom_toBottomOf="@id/tvSource"
+                app:layout_constraintStart_toEndOf="@id/tvSource"
+                app:layout_constraintTop_toTopOf="@id/tvSource"/>
+
+            <TextView
+                android:id="@+id/tvTimePublished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp6"
+                android:text="@{item.contentDate}"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tvSource"
+                app:layout_constraintStart_toEndOf="@id/tvBullet"
+                app:layout_constraintTop_toTopOf="@id/tvSource"
+                tools:text="2 min ago" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
