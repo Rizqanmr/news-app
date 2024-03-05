@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.newsdetail.NewsDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarNewsDetail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/light_red"
+        app:title="@string/detail_news"
+        app:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarNewsDetail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp16"
+            android:paddingBottom="@dimen/dp32">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp16"
+                android:textSize="@dimen/sp24"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/tvSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:layout_marginStart="@dimen/dp16"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Source" />
+
+            <TextView
+                android:id="@+id/tvBullet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp6"
+                android:text="@string/text_with_bullet"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintBottom_toBottomOf="@id/tvSource"
+                app:layout_constraintStart_toEndOf="@id/tvSource"
+                app:layout_constraintTop_toTopOf="@id/tvSource"/>
+
+            <TextView
+                android:id="@+id/tvPublishedAt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="@dimen/dp6"
+                android:layout_marginTop="@dimen/dp4"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvBullet"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:text="4 November 2023" />
+
+            <TextView
+                android:id="@+id/tvAuthor"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:paddingHorizontal="@dimen/dp16"
+                android:textSize="@dimen/sp14"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSource"
+                tools:text="Author: Irma Grant" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:paddingHorizontal="@dimen/dp16"
+                android:textSize="@dimen/sp14"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAuthor"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Description" />
+
+            <ImageView
+                android:id="@+id/ivNews"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp350"
+                android:layout_marginTop="@dimen/dp8"
+                android:contentDescription="@string/news_image"
+                android:scaleType="centerCrop"
+                android:transitionName="image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription"
+                tools:src="@drawable/ic_error" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:paddingHorizontal="@dimen/dp16"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivNews"
+                tools:text="Earum voluptas magnam doloribus. Harum consequatur accusamus animi. Eum distinctio ut quia tempore. Natus velit velit eum sit adipisci autem vero ea doloremque. Ut et repudiandae. Eos tenetur reprehenderit id excepturi." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

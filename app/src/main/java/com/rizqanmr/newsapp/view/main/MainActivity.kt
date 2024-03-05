@@ -6,12 +6,13 @@ import androidx.activity.viewModels
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rizqanmr.newsapp.R
 import com.rizqanmr.newsapp.databinding.ActivityMainBinding
 import com.rizqanmr.newsapp.databinding.ItemNewsBinding
 import com.rizqanmr.newsapp.network.model.ArticlesItem
+import com.rizqanmr.newsapp.utils.Constant
 import com.rizqanmr.newsapp.view.adapter.LoadingStateAdapter
 import com.rizqanmr.newsapp.view.adapter.NewsAdapter
+import com.rizqanmr.newsapp.view.newsdetail.NewsDetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -53,7 +54,8 @@ class MainActivity : AppCompatActivity() {
                         Pair(itemNewsBinding.ivNews, "image")
                     )
 
-                //navigate to detail
+                NewsDetailActivity.newIntent(this@MainActivity, optionCompat.toBundle()
+                    ?.apply { putParcelable(Constant.EXTRA_NEWS, item) })
             }
         })
     }

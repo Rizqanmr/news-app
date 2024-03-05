@@ -4,6 +4,7 @@ package com.rizqanmr.newsapp.network.model
 import android.annotation.SuppressLint
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import com.rizqanmr.newsapp.utils.Constant
 import kotlinx.parcelize.Parcelize
 import java.text.SimpleDateFormat
 
@@ -28,6 +29,11 @@ data class ArticlesItem(
             null
         }
     }
+
+    fun getAuthorName(): String {
+        val authorName = if (author.isNullOrEmpty()) Constant.NO_AUTHOR else author
+        return "Author: $authorName"
+    }
 }
 
 data class NewsModel(
@@ -38,7 +44,7 @@ data class NewsModel(
 
 @Parcelize
 data class Source(
-    @SerializedName("name") val name: String? = "Unknown",
+    @SerializedName("name") val name: String?,
     @SerializedName("id") val id: String?
 ) : Parcelable
 
