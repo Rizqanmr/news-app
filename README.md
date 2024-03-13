@@ -2,7 +2,6 @@
 News App with API from [News API] (https://newsapi.org/)
 
 ## Top Headlines
-![Image of Top Headlines](https://github.com/Rizqanmr/news-app/blob/master/homepage.png)
 <img src="https://github.com/Rizqanmr/news-app/blob/master/homepage.png" width="20%" alt="Image of Top Headlines"></img>
 
 ## News Detail
