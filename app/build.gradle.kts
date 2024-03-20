@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
-        buildConfigField("String", "API_KEY", "\"b0d699d48ee84e37b437ee996f870370\"")
+        buildConfigField("String", "API_KEY", "\"Enter your API Key\"")
         applicationId = "com.rizqanmr.newsapp"
         minSdk = 23
         targetSdk = 34
